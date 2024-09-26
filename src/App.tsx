@@ -1,9 +1,9 @@
-import CityList from "./assets/components/CityList.tsx";
+import CityNews from "./assets/components/CityNews.tsx";
 
 function App() {
     return (
         <div>
-            <CityList />
+            <CityNews />
         </div>
     );
 }
