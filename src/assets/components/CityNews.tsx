@@ -103,12 +103,6 @@ const CityNews: React.FC = () => {
                     <h3>Title: {news.title}</h3>
                     <p>Description: {news.description}</p>
                     <p>Content: {news.content}</p>
-                    <p>Local:{" "}
-                        {news.isLocal ? (
-                            <span style={{ color: 'red' }}>This news is local</span>
-                        ) : (
-                            <span>Not local</span>
-                        )}</p>
                 </div>
             )}
         </div>
