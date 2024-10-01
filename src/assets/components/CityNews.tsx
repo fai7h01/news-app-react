@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
-import 'bootstrap/dist/css/bootstrap.css'
 
 // Define the types for data
 interface CityDto {
@@ -82,23 +81,28 @@ const CityNews: React.FC = () => {
     }
 
     return (
-        <div>
-            <h1>City News</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="city">Select a city: </label>
-                <select id="city" onChange={handleCityChange} value={selectedCityId ?? ""}>
-                    <option value="">-- Choose a City --</option>
-                    {cities.map((city) => (
-                        <option key={city.id} value={city.id}>
-                            {city.name}
-                        </option>
-                    ))}
-                </select>
-                <button type="submit">Get News</button>
-            </form>
+        <div className='main'>
+            <div className='header'>
+                <h1>City News</h1>
+            </div>
+
+            <div className='form'>
+                <form onSubmit={handleSubmit} className='dropdown'>
+                    <label htmlFor="city">Select a city: </label>
+                    <select id="city" onChange={handleCityChange} value={selectedCityId ?? ""}>
+                        <option value="">-- Choose a City --</option>
+                        {cities.map((city) => (
+                            <option key={city.id} value={city.id}>
+                                {city.name}
+                            </option>
+                        ))}
+                    </select>
+                    <button type="submit" className='submit'>Get News</button>
+                </form>
+            </div>
 
             {news && (
-                <div>
+                <div className='article'>
                     <h2>Article</h2>
                     <h3>Title: {news.title}</h3>
                     <p>Description: {news.description}</p>
