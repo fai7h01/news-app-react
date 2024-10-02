@@ -36,7 +36,7 @@ const CityNews: React.FC = () => {
     useEffect(() => {
         // Fetch the list of cities from the backend
         axios
-            .get<ResponseWrapper<CityDto[]>>("https://54.167.106.209:8081/api/v1/city/list")
+            .get<ResponseWrapper<CityDto[]>>("https://news-app-b06j.onrender.com/api/v1/city/list")
             .then((response) => {
                 if (response.data.success) {
                     setCities(response.data.data); // Set the cities in the state
@@ -63,7 +63,7 @@ const CityNews: React.FC = () => {
 
         // Fetch news for the selected city
         axios
-            .get<ResponseWrapper<NewsDto>>(`https://54.167.106.209:8081/api/v1/news/search/${selectedCityId}`)
+            .get<ResponseWrapper<NewsDto>>(`https://news-app-b06j.onrender.com/api/v1/news/search/${selectedCityId}`)
             .then((response) => {
                 if (response.data.success) {
                     setNews(response.data.data); // Set the news in the state
